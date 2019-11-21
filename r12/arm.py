@@ -96,8 +96,8 @@ class Arm(object):
 
     def connect(self, port=None):
         ''' Open a serial connection to the arm. '''
-        if port is None:
-            self.port = search_for_port('/dev/ttyUSB*', 'ROBOFORTH\r\n',
+        if port is None: # '/dev/ttyUSB*'
+            self.port = search_for_port('/dev/tty.usbserial*', 'ROBOFORTH\r\n',
                                         'ROBOFORTH')
         else:
             self.port = port
